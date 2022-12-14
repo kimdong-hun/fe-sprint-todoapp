@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import { TodoProvider } from './TodoContext';
+import TodoListContainer from './components/TodoListContainer';
+import TodoListHeader from './components/TodoListHeader';
+import TodoListMain from './components/TodoListMain';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9ecef;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <GlobalStyle />
+      <TodoListContainer>
+        <TodoListHeader></TodoListHeader>
+        <TodoListMain></TodoListMain>
+      </TodoListContainer>
+    </TodoProvider>
   );
 }
 
