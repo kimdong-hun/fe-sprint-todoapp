@@ -1,3 +1,3 @@
 # TodoList
 
-https://kimdong-hun.github.io/TodoList
+https://kimdong-hun.github.io/todolist
