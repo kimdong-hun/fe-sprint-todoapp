@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://kimdong-hun.github.io/fe-sprint-todoapp",
+  "homepage": "http://kimdong-hun.github.io/fe-sprint-todoapp",
   "eslintConfig": {
     "extends": [
       "react-app",
