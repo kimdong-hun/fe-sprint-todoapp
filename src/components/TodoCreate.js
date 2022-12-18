@@ -30,8 +30,8 @@ const TodoCreate = () => {
       todo: {
         id: nextId.current,
         text: value,
-        done: false
-      }
+        done: false,
+      },
     });
 
     setValue('');

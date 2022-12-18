@@ -76,6 +76,7 @@ const TodoItemText = styled.p`
     `}
 `;
 
+// eslint-disable-next-line react/prop-types
 const TodoItem = ({ id, done, text }) => {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(text);
@@ -85,11 +86,11 @@ const TodoItem = ({ id, done, text }) => {
   const onToggle = () => dispatch({ type: 'TOGGLE', id });
   const onRemove = () => dispatch({ type: 'REMOVE', id });
   const onChange = (e) => setValue(e.target.value);
-  const onSubmit = (e) => {
+  const onSubmit = () => {
     dispatch({
       type: 'UPDATE',
       id,
-      text: value
+      text: value,
     });
     setEdit(false);
   };
@@ -101,6 +102,7 @@ const TodoItem = ({ id, done, text }) => {
       </TodoItemCheck>
       {edit ? (
         <TodoItemForm onSubmit={onSubmit}>
+          {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
           <TodoItemInput autoFocus value={value} onChange={onChange} />
         </TodoItemForm>
       ) : (

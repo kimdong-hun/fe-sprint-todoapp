@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useTodoState } from '../TodoContext';
 
@@ -34,7 +33,7 @@ const TodoListHeader = () => {
   const date = today.toLocaleDateString('ko-KR', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   });
   const day = today.toLocaleDateString('ko-KR', { weekday: 'long' });
 

@@ -1,26 +1,26 @@
-import React, { useReducer, createContext, useContext, useRef } from 'react';
+import { useReducer, createContext, useContext, useRef } from 'react';
 
 const initialTodos = [
   {
     id: 1,
     text: 'HTML',
-    done: true
+    done: true,
   },
   {
     id: 2,
     text: 'CSS',
-    done: true
+    done: true,
   },
   {
     id: 3,
     text: 'JavaScript',
-    done: false
+    done: false,
   },
   {
     id: 4,
     text: 'React',
-    done: false
-  }
+    done: false,
+  },
 ];
 
 const todoReducer = (state, action) => {
@@ -46,6 +46,7 @@ const TodoStateContext = createContext();
 const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const TodoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
   const nextId = useRef(5);
